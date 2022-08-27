@@ -17,6 +17,7 @@
 		033FF04D28B7C32C0093F709 /* ConstantValuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF04C28B7C32C0093F709 /* ConstantValuesModel.swift */; };
 		033FF04F28B7C6C80093F709 /* CallAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF04E28B7C6C80093F709 /* CallAPIModel.swift */; };
 		033FF05228B7DE990093F709 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF05128B7DE990093F709 /* MainView.swift */; };
+		033FF05628B932B50093F709 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF05528B932B50093F709 /* SubView.swift */; };
 		A5AFC60149409943566F4F44 /* Pods_LoginTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EF91D1D67B95ECE37B903B /* Pods_LoginTest.framework */; };
 		C4EEA10707125238C7DB4CFF /* Pods_LoginTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0323E0E95F5B947BF9DC6C /* Pods_LoginTestTests.framework */; };
 		CC66847B0193268C261F4CA4 /* Pods_LoginTest_LoginTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64723F57ED6A8F5CE3D5FF9 /* Pods_LoginTest_LoginTestUITests.framework */; };
@@ -54,6 +55,7 @@
 		033FF04E28B7C6C80093F709 /* CallAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPIModel.swift; sourceTree = "<group>"; };
 		033FF05028B7C96D0093F709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		033FF05128B7DE990093F709 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		033FF05528B932B50093F709 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		209DDF3C6A6736050D875DC5 /* Pods-LoginTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTest.release.xcconfig"; path = "Target Support Files/Pods-LoginTest/Pods-LoginTest.release.xcconfig"; sourceTree = "<group>"; };
 		23EC4B2C90BC2A1306CEBF73 /* Pods-LoginTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTestTests.release.xcconfig"; path = "Target Support Files/Pods-LoginTestTests/Pods-LoginTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E0323E0E95F5B947BF9DC6C /* Pods_LoginTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,11 +123,12 @@
 				033FF05028B7C96D0093F709 /* Info.plist */,
 				033FF01A28B624900093F709 /* LoginTestApp.swift */,
 				033FF01C28B624900093F709 /* ContentView.swift */,
+				033FF05128B7DE990093F709 /* MainView.swift */,
+				033FF05528B932B50093F709 /* SubView.swift */,
 				033FF01E28B624910093F709 /* Assets.xcassets */,
 				033FF02028B624910093F709 /* Preview Content */,
 				033FF04C28B7C32C0093F709 /* ConstantValuesModel.swift */,
 				033FF04E28B7C6C80093F709 /* CallAPIModel.swift */,
-				033FF05128B7DE990093F709 /* MainView.swift */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				033FF01D28B624900093F709 /* ContentView.swift in Sources */,
 				033FF04D28B7C32C0093F709 /* ConstantValuesModel.swift in Sources */,
 				033FF05228B7DE990093F709 /* MainView.swift in Sources */,
+				033FF05628B932B50093F709 /* SubView.swift in Sources */,
 				033FF01B28B624900093F709 /* LoginTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

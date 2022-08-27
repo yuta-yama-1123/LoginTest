@@ -8,10 +8,36 @@
 import SwiftUI
 
 struct MainView: View {
+  @Environment(\.dismiss) private var dismiss
+
+  @State private var isShowSubView = false
+  @State private var sessionExpired = false
   var body: some View {
-    VStack {
-      Text("MainView")
+    NavigationView {
+      VStack {
+        Text("MainView")
+          .padding()
+        Button( action: { isShowSubView.toggle() }) {
+            Text("Move to SubView")
+        }
+        NavigationLink(
+          destination: SubView(
+            sessionExpired: $sessionExpired),
+          isActive: $isShowSubView) {
+          EmptyView()
+      }
+        .onAppear{
+          if (sessionExpired) {
+            dismiss()
+          }
+        }
     }
+      .navigationBarBackButtonHidden(true)
+      .navigationBarTitle("")
+      .navigationBarHidden(true)
+  }
+    .navigationBarTitle("")
+    .navigationBarHidden(true)
     .navigationBarBackButtonHidden(true)
   }
 }
