@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		033FF01B28B624900093F709 /* LoginTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF01A28B624900093F709 /* LoginTestApp.swift */; };
-		033FF01D28B624900093F709 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF01C28B624900093F709 /* ContentView.swift */; };
+		033FF01D28B624900093F709 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF01C28B624900093F709 /* LoginView.swift */; };
 		033FF01F28B624910093F709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033FF01E28B624910093F709 /* Assets.xcassets */; };
 		033FF02228B624910093F709 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033FF02128B624910093F709 /* Preview Assets.xcassets */; };
 		033FF02C28B624920093F709 /* LoginTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF02B28B624920093F709 /* LoginTestTests.swift */; };
@@ -18,6 +18,8 @@
 		033FF04F28B7C6C80093F709 /* CallAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF04E28B7C6C80093F709 /* CallAPIModel.swift */; };
 		033FF05228B7DE990093F709 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF05128B7DE990093F709 /* MainView.swift */; };
 		033FF05628B932B50093F709 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FF05528B932B50093F709 /* SubView.swift */; };
+		03C229F328BBBE2500BF7D10 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C229F228BBBE2500BF7D10 /* SignUpView.swift */; };
+		03C229F528BBCA9D00BF7D10 /* CutomSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C229F428BBCA9D00BF7D10 /* CutomSecureFieldView.swift */; };
 		A5AFC60149409943566F4F44 /* Pods_LoginTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EF91D1D67B95ECE37B903B /* Pods_LoginTest.framework */; };
 		C4EEA10707125238C7DB4CFF /* Pods_LoginTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0323E0E95F5B947BF9DC6C /* Pods_LoginTestTests.framework */; };
 		CC66847B0193268C261F4CA4 /* Pods_LoginTest_LoginTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64723F57ED6A8F5CE3D5FF9 /* Pods_LoginTest_LoginTestUITests.framework */; };
@@ -43,7 +45,7 @@
 /* Begin PBXFileReference section */
 		033FF01728B624900093F709 /* LoginTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033FF01A28B624900093F709 /* LoginTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestApp.swift; sourceTree = "<group>"; };
-		033FF01C28B624900093F709 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		033FF01C28B624900093F709 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		033FF01E28B624910093F709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		033FF02128B624910093F709 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		033FF02728B624920093F709 /* LoginTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,8 @@
 		033FF05028B7C96D0093F709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		033FF05128B7DE990093F709 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		033FF05528B932B50093F709 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
+		03C229F228BBBE2500BF7D10 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		03C229F428BBCA9D00BF7D10 /* CutomSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutomSecureFieldView.swift; sourceTree = "<group>"; };
 		209DDF3C6A6736050D875DC5 /* Pods-LoginTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTest.release.xcconfig"; path = "Target Support Files/Pods-LoginTest/Pods-LoginTest.release.xcconfig"; sourceTree = "<group>"; };
 		23EC4B2C90BC2A1306CEBF73 /* Pods-LoginTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTestTests.release.xcconfig"; path = "Target Support Files/Pods-LoginTestTests/Pods-LoginTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E0323E0E95F5B947BF9DC6C /* Pods_LoginTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,13 +126,15 @@
 			children = (
 				033FF05028B7C96D0093F709 /* Info.plist */,
 				033FF01A28B624900093F709 /* LoginTestApp.swift */,
-				033FF01C28B624900093F709 /* ContentView.swift */,
+				033FF01C28B624900093F709 /* LoginView.swift */,
+				03C229F228BBBE2500BF7D10 /* SignUpView.swift */,
 				033FF05128B7DE990093F709 /* MainView.swift */,
 				033FF05528B932B50093F709 /* SubView.swift */,
 				033FF01E28B624910093F709 /* Assets.xcassets */,
 				033FF02028B624910093F709 /* Preview Content */,
 				033FF04C28B7C32C0093F709 /* ConstantValuesModel.swift */,
 				033FF04E28B7C6C80093F709 /* CallAPIModel.swift */,
+				03C229F428BBCA9D00BF7D10 /* CutomSecureFieldView.swift */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -420,8 +426,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				033FF04F28B7C6C80093F709 /* CallAPIModel.swift in Sources */,
-				033FF01D28B624900093F709 /* ContentView.swift in Sources */,
+				033FF01D28B624900093F709 /* LoginView.swift in Sources */,
 				033FF04D28B7C32C0093F709 /* ConstantValuesModel.swift in Sources */,
+				03C229F528BBCA9D00BF7D10 /* CutomSecureFieldView.swift in Sources */,
+				03C229F328BBBE2500BF7D10 /* SignUpView.swift in Sources */,
 				033FF05228B7DE990093F709 /* MainView.swift in Sources */,
 				033FF05628B932B50093F709 /* SubView.swift in Sources */,
 				033FF01B28B624900093F709 /* LoginTestApp.swift in Sources */,

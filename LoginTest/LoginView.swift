@@ -8,7 +8,7 @@
 import SwiftUI
 import PromiseKit
 
-struct ContentView: View {
+struct LoginView: View {
   // API呼び出し
   var callApi = CallAPIModel()
   
@@ -18,6 +18,8 @@ struct ContentView: View {
   
   // ログイン成否
   @State var isAuthenticated: Bool = false
+  // サインアップ画面呼び出し
+  @State var signUp: Bool = false
   
   var body: some View {
       NavigationView {
@@ -42,9 +44,19 @@ struct ContentView: View {
               .background(Color.blue)
               .cornerRadius(20, antialiased: true)
             Text(result)
+            Button (action: {
+              signUp.toggle()
+            }) {
+              Text("サインアップ")
+            }
             NavigationLink(
               destination: MainView(),
               isActive: $isAuthenticated) {
+                EmptyView()
+            }
+            NavigationLink(
+              destination: SignUpView(),
+              isActive: $signUp) {
                 EmptyView()
             }
         }
@@ -72,9 +84,9 @@ struct ContentView: View {
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+      LoginView()
             .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
     }
 }
