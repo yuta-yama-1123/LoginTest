@@ -12,6 +12,7 @@ class CallAPIModel {
     return Promise { resolver in
       let requestUrl = constant.apiDomain + "/login"
       let param: Parameters = [
+        "remember": true,
         "email": email,
         "password": password
       ]
@@ -28,10 +29,10 @@ class CallAPIModel {
         )
         .validate()
         .responseData { response in
-          print(response.response?.statusCode)
           switch response.result {
           case .success(_):
             //self.responseStr = String(data: data, encoding: .utf8)!
+            self.printCookies()
             resolver.fulfill(true)
           case .failure(let error):
             resolver.reject(error)

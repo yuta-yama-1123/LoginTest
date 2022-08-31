@@ -10,7 +10,7 @@ import Combine
 
 struct SignUpView: View {
   @Environment(\.dismiss) private var dismiss
-  @Environment(\ .colorScheme)var colorScheme
+  @Environment(\ .colorScheme) var colorScheme
   
   @State var userName = ""
   @State var email = ""

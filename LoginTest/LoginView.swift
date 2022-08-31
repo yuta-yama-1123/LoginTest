@@ -9,8 +9,11 @@ import SwiftUI
 import PromiseKit
 
 struct LoginView: View {
+  @Environment(\ .colorScheme) var colorScheme
   // API呼び出し
   var callApi = CallAPIModel()
+  //
+  var tokenControl = TokenControl()
   
   @State var email = ""
   @State var password = ""
@@ -21,48 +24,62 @@ struct LoginView: View {
   // サインアップ画面呼び出し
   @State var signUp: Bool = false
   
+  @AppStorage(wrappedValue: "", "sessionToken") private var sessionToken: String
+  
+  init() {
+    tokenControl.retrieveCookies()
+  }
+  
   var body: some View {
-      NavigationView {
-        VStack(spacing: 20) {
-            Text("ログイン")
+    NavigationView {
+      VStack(spacing: 20) {
+        Text(sessionToken)
+        TextField("トークン", text: $sessionToken)
+          .autocapitalization(.none)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+          .frame(width: 300)
+        Text("ログイン")
               .bold()
-            TextField("ID（半角英数）", text: $email)
-              .autocapitalization(.none)
-              .textFieldStyle(RoundedBorderTextFieldStyle())
-              .frame(width: 300)
-            SecureField("パスワード（半角英数）", text: $password)
-              .autocapitalization(.none)
-              .textFieldStyle(RoundedBorderTextFieldStyle())
-              .frame(width: 300)
-            Button(action: {
-                login()
-            }) {
-                Text("ログイン")
-            }
-              .frame(width: 200, height: 60)
-              .foregroundColor(Color.white)
-              .background(Color.blue)
-              .cornerRadius(20, antialiased: true)
-            Text(result)
-            Button (action: {
-              signUp.toggle()
-            }) {
-              Text("サインアップ")
-            }
-            NavigationLink(
-              destination: MainView(),
-              isActive: $isAuthenticated) {
-                EmptyView()
-            }
-            NavigationLink(
-              destination: SignUpView(),
-              isActive: $signUp) {
-                EmptyView()
-            }
+        TextField("ID（半角英数）", text: $email)
+          .autocapitalization(.none)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+          .frame(width: 300)
+        SecureField("パスワード（半角英数）", text: $password)
+          .autocapitalization(.none)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+          .frame(width: 300)
+        Button(action: {
+          login()
+        }) {
+          Text("ログイン")
         }
-          .navigationBarBackButtonHidden(true)
-          .navigationBarHidden(true)
+        .frame(width: 200, height: 60)
+        .foregroundColor(Color.white)
+        .background(Color.blue)
+        .cornerRadius(20, antialiased: true)
+        Text(result)
+        Button (action: {
+          signUp.toggle()
+        }) {
+          Text("サインアップ")
+        }
+        NavigationLink(
+          destination: MainView(),
+          isActive: $isAuthenticated) {
+          EmptyView()
+        }
+        NavigationLink(
+          destination: SignUpView(),
+          isActive: $signUp) {
+          EmptyView()
+        }
       }
+      .navigationBarBackButtonHidden(true)
+      .navigationBarHidden(true)
+      .onAppear{
+        touch()
+      }
+    }
   }
   
   // ログイン処理
@@ -75,7 +92,25 @@ struct LoginView: View {
       )
     }.done { loggedIn in
       if (loggedIn) {
-        self.isAuthenticated.toggle()
+        tokenControl.storeCookies()
+        self.isAuthenticated = true
+      }
+    }.catch { error in
+      print(error)
+      result = "ログインに失敗しました"
+    }
+  }
+  
+  // セッション有効チェック
+  func touch() {
+    firstly {
+      // 認証API呼び出し
+      callApi.touch()
+    }.done { loggedIn in
+      if (loggedIn) {
+        print("true")
+        tokenControl.storeCookies()
+        self.isAuthenticated = true
       }
     }.catch { error in
       print(error)
